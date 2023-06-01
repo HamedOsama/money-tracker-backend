@@ -10,6 +10,7 @@ const api = require('./src/routes/index');
 const connectDatabase = require("./src/db/db");
 const errorMiddleWare = require("./src/middleware/error.middleware");
 const ServerError = require("./src/utils/ErrorInterface");
+const morgan = require("morgan");
 
 
 dotenv.config();
@@ -28,6 +29,7 @@ app.use(cors({
 // app.use(cors({credentials : true , origin :  'https://hatlytest.trendlix.com'}));
 app.use(express.json());
 app.use(cookieParser());
+app.use(morgan('tiny'))
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
