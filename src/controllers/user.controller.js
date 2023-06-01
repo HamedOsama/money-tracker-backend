@@ -262,7 +262,7 @@ const logout = async (req, res, next) => {
       httpOnly: true,
       secure: true,
       path: '/',
-      domain: '.kit-hardware-center.com',
+      domain: '.bestprice4deals.com',
       sameSite: 'none',
     }).json({
       ok: true,
