@@ -20,8 +20,8 @@ connectDatabase()
 const app = express();
 
 // https://www.kit-hardware-center.com/
-// app.use(cors({ credentials: true }));
-app.use(cors({ credentials: true, origin: ['http://localhost:3000', 'http://localhost:3001', 'https://admin.bestprice4deals.com' , 'https://www.bestprice4deals.com' , 'https://bestprice4deals.com' , 'https://money-tracker-admin.vercel.app'] }));
+app.use(cors({ credentials: true }));
+// app.use(cors({ credentials: true, origin: ['http://localhost:3000', 'http://localhost:3001', 'https://admin.bestprice4deals.com' , 'https://www.bestprice4deals.com' , 'https://bestprice4deals.com' , 'https://money-tracker-admin.vercel.app'] }));
 // app.use(cors({credentials : true , origin :  'https://hatlytest.trendlix.com'}));
 app.use(express.json());
 app.use(cookieParser());
