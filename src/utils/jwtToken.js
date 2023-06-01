@@ -10,9 +10,9 @@ const sendToken = async(user, statusCode, res) => {
       Date.now() + process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000
     ),
     httpOnly: true,
-    // secure: true,
+    secure: true,
     path : '/',
-    // domain: '.kit-hardware-center.com', 
+    domain: '.bestprice4deals.com', 
     sameSite : 'lax',
   };
   user.tokens = null
