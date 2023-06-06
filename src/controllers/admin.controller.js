@@ -4,7 +4,6 @@ const ServerError = require("../utils/ErrorInterface");
 const APIFeatures = require('../utils/apiFeatures');
 const User = require('../models/userModel');
 const Product = require('../models/product');
-const Order = require('../models/order');
 const sendToken = require('../utils/jwtToken');
 const Admin = require('../models/admin');
 
