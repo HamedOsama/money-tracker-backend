@@ -142,7 +142,7 @@ const updateUser = async (req, res, next) => {
     if (!user) {
       return next(ServerError.badRequest(404, 'user not found'))
     }
-    const { username, password, status,activeProductsLimit } = req.body;
+    const { username, password, status, activeProductsLimit } = req.body;
     if (username)
       user.username = username;
     if (password)
@@ -171,6 +171,7 @@ const deleteUser = async (req, res, next) => {
     if (!user) {
       return next(ServerError.badRequest(404, 'user not found'))
     }
+    await Product.deleteMany({ owner: id });
     res.status(200).json({
       ok: true,
       status: 200,
