@@ -99,10 +99,13 @@ const getStats = async (req, res, next) => {
 // user
 const addUser = async (req, res, next) => {
   try {
-    const { username, password } = req.body;
+    const { username, password, activeProductsLimit } = req.body;
+    if (!username || !password || !activeProductsLimit)
+      return next(ServerError.badRequest(400, 'الأسم و كلمة المرور و الحد الأقصى للمنتجات المسموح بها مطلوبة'))
     const user = new User({
       username,
       password,
+      activeProductsLimit
     })
     await user.save();
     res.status(200).json({
