@@ -49,3 +49,5 @@ app.use(errorMiddleWare);
 app.listen(process.env.PORT, () => {
   console.log("server start on " + process.env.PORT);
 });
+
+module.exports = app;
